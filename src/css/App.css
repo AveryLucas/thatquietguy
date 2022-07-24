@@ -1,0 +1,144 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-size: 20px;
+}
+
+#app-header p {
+  margin: 0;
+}
+
+#app-header {
+  padding: 50px 0 20px 0;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#app-header span {
+  opacity: 0.6;
+}
+
+#app-header .my-site {
+  /* opacity: 0.6; */
+  color: rgba(0, 0, 0, 1);
+  display: inline-block;
+  background: #b8ffee;
+  font-style: italic;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+#app-header .my-site:hover {
+  cursor: grab;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.blog-link {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: transform 200ms, box-shadow 500ms, background 300ms;
+  /* margin-bottom: 20px; */
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: 400px;
+  margin: auto;
+  text-decoration: none;
+  color: #1a1a1a;
+
+  filter: none;
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+}
+
+.blog-link:hover {
+  /* background: rgb(210, 221, 203); */
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.17), 0px 11px 26px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.blog-details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.blog-details p {
+  color: #1a1a1a;
+  font-size: 18px;
+}
+
+.blog-details h3 {
+  font-size: 20px;
+  line-height: 135%;
+  letter-spacing: 0.01em;
+}
+
+.blog-link * {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.blog-details *:last-child {
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
+  width: 80%;
+}
+
+/* Post Page */
+#post-header {
+  margin: 20px auto 50px auto;
+  text-align: center;
+  /* margin-top: 140px; */
+  /* margin-bottom: 50px; */
+}
+
+article > * {
+  max-width: 600px;
+  margin: auto;
+}
+
+#post-header h1 {
+  color: #37352f;
+  margin-bottom: 10px;
+  /* font-size: 32px; */
+}
+
+#post-header p {
+  /* font-size: 18px; */
+  font-weight: 500;
+  color: #1f1d21;
+  opacity: 0.6;
+}
+
+p {
+  /* font-size: 20px; */
+  line-height: 130%;
+  max-width: 600px;
+  margin: auto;
+}
+
+body {
+  padding-bottom: 200px;
+}

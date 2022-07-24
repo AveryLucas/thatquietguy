@@ -1,0 +1,53 @@
+import PostHeader from "../components/PostHeader";
+import PostArticle from "../components/PostArticle";
+import PostThumbnail from "../components/PostThumbnail";
+
+export const title = "test";
+export const subTitle = "";
+export const desc =
+  "This article has been updated to use react-transition-group v2. If you are using v1 (or the version that used to be bundled with React addons).";
+export const creationDate = "7/22/2022";
+
+<PostHeader title={title} subTitle={subTitle} />
+
+This is **markdown** with <span style={{color: "red"}}>JSX</span>: MDX!
+
+<br />
+<i>
+  Edit (9–2–2017): This article has been updated to use react-transition-group
+  v2. If you are using v1 (or the version that used to be bundled with React
+  addons), you can see the context example here and the props example here
+</i>
+
+<br />
+It can be a bit confusing getting animated transitions setup with React Router v4.
+This article won’t cover every scenario, but we’ll go over the basics so that you
+can add animated transitions to your application.
+<br />
+<br />
+
+<div style={{ display: "flex", justifyContent: "center", padding: "25px" }}>
+  <PostThumbnail title={title} desc={desc} />
+</div>
+
+<br />
+<br />
+react-transition-group's is the easiest way to animate our navigation
+transitions, so we’ll be using that.
+
+<br />
+
+### Understanding the Transition Group
+
+<br />
+The basic explanation of how the works is that it keeps track of the key prop of
+each of its children. It stores its children in state and when it updates it compares
+the children in state with its new props.children to determine which ones are "entering",
+which are "exiting", and which are staying the same. It then renders all of its children
+(merges state.children and props.children), giving them classes based on their state.
+
+<br />
+This means that if you initially create the following elements:
+
+<br />
+Children Component
