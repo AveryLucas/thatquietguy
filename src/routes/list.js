@@ -6,12 +6,17 @@ function getMdxFiles() {
     .context("../posts", false, /\.(mdx)$/)
     .keys();
 
-  return mdxFileDirectories.map((postDirectory) => {
+  const modules = mdxFileDirectories.map((postDirectory) => {
     const data = require(`../posts/${postDirectory.split("/").pop()}`);
-    const { title, subTitle, desc } = data;
-    if (title && desc)
+    return data;
+  });
+
+  return modules.filter((mdxModule) => {
+    const { title, subTitle, desc, i } = mdxModule;
+    console.log({ title, subTitle, desc, i });
+    if (title && desc && i)
       return {
-        Mdx: data.default,
+        MdxComponent: mdxModule.default,
         title,
         subTitle,
         desc,
@@ -19,12 +24,18 @@ function getMdxFiles() {
   });
 }
 
-const Indexes = ({ background }) => {
-  const mdxFiles = getMdxFiles("../posts");
-
-  const renderedList = mdxFiles.map(({ title, desc }) => (
-    <PostThumbnail title={title} desc={desc} />
-  ));
+const IndexPage = ({ background }) => {
+  const mdxFiles = getMdxFiles();
+  console.log(mdxFiles);
+  const renderedList = getMdxFiles().map((post, index) => {
+    return (
+      <PostThumbnail
+        title={post.title}
+        desc={post.desc}
+        key={`post_${index}`}
+      />
+    );
+  });
 
   return (
     <div
@@ -57,4 +68,4 @@ const Indexes = ({ background }) => {
   );
 };
 
-export default Indexes;
+export default IndexPage;
